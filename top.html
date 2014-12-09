@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="Shift_JIS">
+		<title>Top : KUT-ARC</title>
+		<style type="text/css">
+			/* 表示領域全体 */
+			div.sample div.sampletabbox { margin: 0px; padding: 0px; width: 700px; clear: left; }
+			/* タブ部分 */
+			div.sample p.sampletabs { margin: 0px; padding: 0px; }
+			div.sample p.sampletabs a { display: block; width: 4em; float: left; margin: 0px 15px 0px 15px; padding: 10px; text-align: center; }
+			div.sample p.sampletabs a.sampletab1 { background-color: white; color: black; }
+			div.sample p.sampletabs a.sampletab2 { background-color: white; color: black; }
+			div.sample p.sampletabs a.sampletab3 { background-color: white; color: black; }
+			div.sample p.sampletabs a.sampletab4 { background-color: white; color: black; }
+			div.sample p.sampletabs a.sampletab5 { background-color: white; color: black; }
+			div.sample p.sampletabs a.sampletab6 { background-color: white; color: black; }
+			div.sample p.sampletabs a:hover { color: yellow; text-decoration: underline; }
+			/* 対応表示領域 */
+			div.sample div.sampletab { height: 500px; overflow: auto; clear: left; }
+			div.sample div#sampletab1 { border: 2px solid gray; background-color: white; }
+			div.sample div#sampletab2 { border: 2px solid gray; background-color: white; }
+			div.sample div#sampletab3 { border: 2px solid gray; background-color: white; }
+			div.sample div#sampletab4 { border: 2px solid gray; background-color: white; }
+			div.sample div#sampletab5 { border: 2px solid gray; background-color: white; }
+			div.sample div#sampletab6 { border: 2px solid gray; background-color: white; }
+			div.sample div.sampletab p { margin: 0.5em; }
+			/* 装飾（今回のテクニックとは無関係） */
+			div.sample div.sampletab ul, div.sampletab ol { margin-top: 0.5em; margin-bottom: 0.5em; }
+			div.sample div.sampletab li { line-height: 1.35; margin-bottom: 0px; margin-top: 0px; }
+			div.sample div.sampletab ul li { list-style-type: disc; }
+			div.sample div.sampletab p.tabhead { font-weight: bold; border-bottom: 3px double gray; }
+		</style>
+		<script type="text/javascript">
+		function ChangeTab(tabname) {
+			// 全部消す
+			document.getElementById('sampletab1').style.display = 'none';
+			document.getElementById('sampletab2').style.display = 'none';
+			document.getElementById('sampletab3').style.display = 'none';
+			document.getElementById('sampletab4').style.display = 'none';
+			document.getElementById('sampletab5').style.display = 'none';
+			document.getElementById('sampletab6').style.display = 'none';
+			// 指定箇所のみ表示
+			if(tabname) {
+				document.getElementById(tabname).style.display = 'block';
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<!-- ロゴの表示 -->
+		<div align="center">
+			<p class="logo">
+				<a href="top.html">
+					<img src="logo.png" alt="ロゴ" style="width:100%;height:auto;max-width:1200px;">
+				</a>
+			</p>
+		</div>
+		
+		<!-- タブの表示 -->
+		<div class="sample">
+			<div class="sampletabbox">
+				<p class="sampletabs">
+					<a onclick="ChangeTab('sampletab1'); return false;" class="sampletab1" href="#sampletab1">住居</a>
+					<a onclick="ChangeTab('sampletab2'); return false;" class="sampletab2" href="#sampletab2">公共施設</a>
+					<a onclick="ChangeTab('sampletab3'); return false;" class="sampletab3" href="#sampletab3">生活施設</a>
+					<a onclick="ChangeTab('sampletab4'); return false;" class="sampletab4" href="#sampletab3">金融機関</a>
+					<a onclick="ChangeTab('sampletab5'); return false;" class="sampletab5" href="#sampletab3">交通機関</a>
+					<a onclick="ChangeTab('sampletab6'); return false;" class="sampletab6" href="#sampletab3">イベント</a>
+				</p>
+				<div class="sampletab" id="sampletab1" >
+				<p class="tabhead">タブ1「住居情報」</p>
+				<p>更新履歴です。新着順に10個の記事を紹介しています。</p>
+				
+				</div>
+				<div class="sampletab" id="sampletab2">
+				<p class="tabhead">タブ2「公共施設」</p>
+				
+				</div>
+				<div class="sampletab" id="sampletab3">
+					<p class="tabhead">タブ3「生活施設」</p>
+				
+				</div>
+				<div class="sampletab" id="sampletab4">
+					<p class="tabhead">タブ4「金融機関」</p>
+				
+				</div>
+				<div class="sampletab" id="sampletab5">
+					<p class="tabhead">タブ5「交通機関」</p>
+				
+				</div>
+				<div class="sampletab" id="sampletab6">
+					<p class="tabhead">タブ6「イベント」</p>
+				
+				</div>
+				<script type="text/javascript"><!--
+				// デフォルトのタブを選択
+				ChangeTab('sampletab1');
+			// --></script>
+		</div>
+	</div>
+	
+	<!-- 検索  -->
+	<div style="margin: 0.5em;">
+		<form target="_blank" method="get" action="http://search.allabout.co.jp/s.php">
+			<input type="text" title="検索したい内容を入力してください" name="qs" />
+			<input type="submit" value="検索" />
+			<input type="hidden" value="sjis" name="ie" />
+		</form>
+	</div>
+		
+	</body>
+</html>
